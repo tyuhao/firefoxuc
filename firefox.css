@@ -1,0 +1,207 @@
+/*==================变量定义==================================*/
+html#main-window {
+
+	--color-bg: #24292f;
+	--toolbar-bgcolor: var(--color-bg) !important;/*工具栏背景颜色*/
+  --color-button: #2da44e;
+  /*--tab-height:16px;*/
+  
+  
+  /*右边面板颜色*/
+	--arrowpanel-background: var(--color-bg) !important;
+	--arrowpanel-color: white !important;
+	--arrowpanel-border-color: transparent !important;
+}
+
+
+/*==================导航栏==================================*/
+
+/*导航栏面板颜色*/
+#navigator-toolbox {
+	background-color: var(--color-bg) !important;
+}
+
+
+.titlebar-color {
+  background-color: var(--toolbar-bgcolor);
+}
+#titlebar {
+	-moz-box-ordinal-group: 3 !important;
+}
+
+    /* hide navbar */
+     #nav-bar:not([customizing]) {
+        visibility: visible !important;
+        margin-top: -55px;
+        transition-delay: 1s;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        transition: visibility ease 1s, margin-top ease 1s, opacity ease 1s !important;
+    }
+    :root:not([customizing]) :hover > #nav-bar, #nav-bar:focus-within, #identity-box[open="true"], #navigator-toolbox:hover > #nav-bar:not([customizing]), #toolbar-menubar:not([inactive="true"]) ~ #nav-bar:not([customizing]) {
+        visibility: visible !important;
+        margin-top: 0;
+        filter: alpha(opacity=100);
+        opacity: 100;
+    }
+    #nav-bar .toolbarbutton-1[open="true"] {
+        visibility: visible;
+        margin-top: 0px;
+        opacity: 100;
+    }
+
+
+/*==================标签栏==================================*/
+
+/*
+.tabbrowser-tab .tab-background[selected="true"] {
+  margin-left: -1px !important;
+  margin-right: -1px !important;
+  border-radius: 16px !important;
+}*/
+
+.tabbrowser-tab {
+	max-height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background: #2da44e !important;
+  border-radius: 16px !important;
+}
+
+.tab-stack {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+
+/*==================搜索栏==================================*/
+
+
+#urlbar-background,#urlbar{ 
+    border-radius: 16px !important ;
+    background-color: var(--color-bg) !important;
+    border: transparent !important;
+  }
+  #urlbar{
+  background-image: linear-gradient(90deg, #2da44e,#2da44e);
+
+  /*background-size: auto 10px;
+    background-repeat: no-repeat;
+    background-position: bottom; */
+
+}
+#urlbar-background{ 
+  margin-bottom: 2px !important;
+  margin-top: 2px !important;
+  margin-left: 2px !important;
+  margin-right: 2px !important; 
+}
+#navigator-toolbox{
+	border-bottom: none !important;
+  }
+  #searchbar
+  {
+	border-radius: 16px !important;
+  background-color: var(--color-bg) !important;
+  }
+
+  .findbar-container
+{
+	overflow: visible !important;
+  background-color: var(--color-bg) !important;
+}
+
+.findbar-textbox
+{
+  border-radius: 16px !important;
+  background-color: var(--color-bg) !important;
+}
+
+
+
+/*==================书签栏==================================*/
+
+#PlacesToolbar {
+	align-items: center !important;
+	display: flex !important;
+	/*font-family: "Sarasa Mono T SC", sans-serif !important;
+	font-size: 10pt !important;
+	font-weight: 700 !important;*/
+	justify-content: center !important;
+}
+
+
+/*======================== 侧边栏自动隐藏============== */
+
+:root {
+	--sidebar-hover-width: 10px;
+	--sidebar-visible-width: 200px;
+  }
+  
+  #sidebar-box {
+	position: relative !important;
+	overflow-x: hidden !important;
+	margin-right: calc(var(--sidebar-hover-width) * -1) !important;
+	left: var(--sidebar-hover-width) !important;
+	min-width: var(--sidebar-hover-width) !important;
+	max-width: var(--sidebar-hover-width) !important;
+	border-right: 1px solid var(--sidebar-border-color);
+	z-index: 1;
+  }
+  
+  #sidebar-box:hover {
+	margin-right: calc(var(--sidebar-visible-width) * -1) !important;
+	left: var(--sidebar-visible-width) !important;
+	min-width: var(--sidebar-visible-width) !important;
+	max-width: var(--sidebar-visible-width) !important;
+  }
+  
+  #sidebar {
+	opacity: 0 !important;
+  }
+  
+  #sidebar-box:hover #sidebar {
+	opacity: 1 !important;
+  }
+  
+  /* #sidebar-header is hidden by default, change "none" to "inherit" to restore it. */
+  #sidebar-header {
+	display: inherit !important;
+  }
+  
+  /* #sidebar-splitter styles the divider between the sidebar and the rest of the browser. */
+  #sidebar-splitter {
+	display: none;
+  }
+
+/*==================按钮==================================*/
+
+ .toolbarbutton-1:hover {
+	fill:var(--color-button) !important;
+  }
+  
+  .toolbarbutton-1[open="true"] {
+	fill: var(--color-button)
+  }
+/*按钮无阴影*/  
+  .toolbarbutton-1 .toolbarbutton-icon,
+  .toolbarbutton-1 .toolbarbutton-badge-stack {
+	  background: none !important;
+  }
+ /* Tab hover customizations 标签关闭按钮*/
+.close-icon:hover {
+	border-radius: 60% !important;
+	fill: #FF0000 !important;
+	transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
+
+/*==================菜单栏边框=================================*/
+/*menupopup {
+
+	padding: 1px !important;
+	background-color: #2da44e !important;
+}*/
+
+

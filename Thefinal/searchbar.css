@@ -1,0 +1,36 @@
+#urlbar-background,#urlbar{ 
+    border-radius: 16px !important ;
+    background-color: #24292f !important;
+    border: transparent !important;
+  }
+#navigator-toolbox{
+	border-bottom: none !important;
+  }
+  #searchbar
+  {
+	border-radius: 16px !important;
+  background-color: #24292f !important;
+  }
+
+  .findbar-container
+{
+	overflow: visible !important;
+  background-color: #24292f !important;
+}
+
+.findbar-textbox
+{
+  border-radius: 16px !important;
+  background-color: #24292f !important;
+}
+
+
+
+#urlbar[focused=true] #urlbar-background{
+	background-color: rgb(43, 42, 51, 0.85) !important;
+}
+
+/*Õ¹¿ªËÑË÷À¸*/
+#urlbar[open=true] #urlbar-background {
+	background-color: #24292f !important;/*rgb(43, 42, 51, 0.85)*/
+  }

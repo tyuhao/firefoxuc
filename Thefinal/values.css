@@ -1,0 +1,30 @@
+html#main-window {
+	--color-bg: #24292f;
+	/*--color-bg: #1d2021,#2b2a33,1c1b22;导航栏颜色*/
+	--toolbar-bgcolor: var(--color-bg) !important;/*工具栏背景颜色*/
+
+	
+	--gap-between-tabs: 2px;/*标签间距离5px*/
+	/*--margin-after-tab-list: 80x;
+	--margin-before-tab-list: 80px;
+	--tab-font: "Sarasa Mono T SC", sans-serif;
+	--tab-font-weight: 700;*/
+	--tab-height: 32px;
+	--tabs-container-height: 85px;
+	--tab-radius: 64px;/*自定义标签栏圆角*/
+
+	--urlbar-container-margin: 5px;
+	--urlbar-list-width: 60%;
+	--urlbar-text-font: "Sarasa Mono T SC", sans-serif;
+	--urlbar-text-size: 12pt;
+	--urlbar-text-weight: 700;
+
+	/* Firefox variables */
+	--lwt-toolbar-field-focus-color: #a1ffb6 !important;
+	--lwt-toolbar-field-color: #fefefa !important;
+	--lwt-toolbar-field-background-color: var(--color-bg) !important;
+/*右边面板颜色*/
+	--arrowpanel-background: #24292f !important;/*#2b2a33*/
+	--arrowpanel-color: white !important;
+	--arrowpanel-border-color: transparent !important;
+}

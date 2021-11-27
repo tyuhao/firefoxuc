@@ -1,0 +1,87 @@
+/* Regular browser tabs 标签栏圆角*/
+
+.tabbrowser-tab {
+	background-color: #ee6c4d !important;/*未选中标签颜色#1d2021*/
+	background-image: linear-gradient(to left, var(--color-tab-normal-start), var(--color-tab-normal-end)) !important;
+	border-radius: var(--tab-height) !important;
+	margin-inline-end: var(--gap-between-tabs) !important;
+	max-height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+}
+
+
+/*彩色标签*/
+.tabbrowser-tab[selected="true"] {
+  background-color: #2da44e !important;
+	/*background-color: #ee6c4d !important;/*选中标签颜色*/
+	/*background-image: linear-gradient(to left, #a1ffb6, #f9ff99) !important;*/
+	color: #e1e4e8 !important;/*标签字体颜色black*/
+	font-weight: var(--tab-font-weight) !important;
+}
+/*标签重叠，隐藏原始标签*/
+.tab-stack {
+	display: flex !important;
+	justify-content: center !important;
+}
+/*标签再地址栏下面
+#titlebar {
+  -moz-box-ordinal-group: 3 !important;
+}*/
+
+
+/* ---------- Tab Bar上留空间 ---------- */
+/*============================================================*/
+:root
+{
+    /* ---------- Drag space (Normal mode) ---------- */
+    --left-side-drag-space:                  40px;
+    --right-side-drag-space:                 40px;
+
+    /* ----- Top tabs (Normal mode) ----- */
+    --top-side-drag-space-windowed:          8px;
+    --top-side-drag-space-maximized:         0px;
+    --top-side-drag-space-menubar-titlebar:  8px;
+    
+    /* ----- Bottom tabs (Normal mode) ----- */
+    --bottom-side-drag-space-windowed:          0px;
+    --bottom-side-drag-space-maximized:         0px;
+    --bottom-side-drag-space-menubar-titlebar:  0px;
+
+    /* ---------- Context menus (Normal mode) ---------- */
+    --browser-context-menu-margin-padding:        6px;
+    --win11-win10-context-menu-margin-padding:    6px;
+
+    /* ---------- Tabs (Normal mode) ---------- */
+    --separators-color-saturation:           50%;
+    --first-separator-saturation:            50%;
+}
+.titlebar-spacer[type="pre-tabs"]
+{
+    width: var(--left-side-drag-space) !important;
+}
+
+.titlebar-spacer[type="post-tabs"]
+{
+    width: var(--right-side-drag-space) !important;
+}
+
+:root[sizemode="normal"]
+{
+    --drag-space: var(--top-side-drag-space-windowed);
+}
+
+:root[sizemode="maximized"]
+{
+    --drag-space: var(--top-side-drag-space-maximized);
+}
+
+:root:not([tabsintitlebar]),
+#toolbar-menubar:not([autohide][inactive]) + #TabsToolbar
+{
+    --drag-space: var(--top-side-drag-space-menubar-titlebar);
+}
+
+#TabsToolbar :is(.tabbrowser-tab, .toolbarbutton-1, separator, #personal-bookmarks, #search-container, .accessibility-indicator, .private-browsing-indicator)
+{
+    margin-top: var(--drag-space) !important;
+}

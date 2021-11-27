@@ -1,0 +1,10 @@
+@-moz-document url("about:home"), url("about:newtab") {
+  .activity-stream {
+    background-color: #24292f !important;
+  }
+}
+@-moz-document url("about:blank") {
+  *:empty:not([id]):not([style]) {
+    background-color: #24292f !important;
+  }
+}

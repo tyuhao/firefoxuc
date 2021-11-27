@@ -1,0 +1,284 @@
+/*==================变量定义==================================*/
+html#main-window {
+
+	--color-bg: #24292f;
+	--toolbar-bgcolor: var(--color-bg) !important;/*工具栏背景颜色*/
+  --color-button: #2da44e;
+  --color-urlbar: #128397;
+  /*右边面板颜色*/
+	--arrowpanel-background: var(--color-bg) !important;
+	--arrowpanel-color: white !important;
+	--arrowpanel-border-color: transparent !important;
+}
+
+
+/*==================导航栏==================================*/
+
+/*导航栏面板颜色*/
+#navigator-toolbox {
+	background-color: var(--color-bg) !important;
+}
+
+
+.titlebar-color {
+  background-color: var(--toolbar-bgcolor);
+}
+/* Regular browser tabs 标签栏圆角*/
+
+
+
+
+
+
+/* ---------- Tab Bar上留空间 ---------- */
+/*============================================================*/
+:root
+{
+    /* ---------- Drag space (Normal mode) ---------- */
+    --left-side-drag-space:                  40px;
+    --right-side-drag-space:                 40px;
+
+    /* ----- Top tabs (Normal mode) ----- */
+    --top-side-drag-space-windowed:          8px;
+    --top-side-drag-space-maximized:         8px;
+    --top-side-drag-space-menubar-titlebar:  8px;
+    
+    /* ----- Bottom tabs (Normal mode) ----- */
+    --bottom-side-drag-space-windowed:          0px;
+    --bottom-side-drag-space-maximized:         0px;
+    --bottom-side-drag-space-menubar-titlebar:  0px;
+
+    /* ---------- Context menus (Normal mode) ---------- */
+    --browser-context-menu-margin-padding:        6px;
+    --win11-win10-context-menu-margin-padding:    6px;
+
+    /* ---------- Tabs (Normal mode) ---------- */
+    --separators-color-saturation:           50%;
+    --first-separator-saturation:            50%;
+}
+.titlebar-spacer[type="pre-tabs"]
+{
+    width: var(--left-side-drag-space) !important;
+}
+
+.titlebar-spacer[type="post-tabs"]
+{
+    width: var(--right-side-drag-space) !important;
+}
+
+:root[sizemode="normal"]
+{
+    --drag-space: var(--top-side-drag-space-windowed);
+}
+
+:root[sizemode="maximized"]
+{
+    --drag-space: var(--top-side-drag-space-maximized);
+}
+
+:root:not([tabsintitlebar]),
+#toolbar-menubar:not([autohide][inactive]) + #TabsToolbar
+{
+    --drag-space: var(--top-side-drag-space-menubar-titlebar);
+}
+
+#TabsToolbar :is(.tabbrowser-tab, .toolbarbutton-1, separator, #personal-bookmarks, #search-container, .accessibility-indicator, .private-browsing-indicator)
+{
+    margin-top: var(--drag-space) !important;
+}
+
+
+/*==================标签栏==================================*/
+
+/*
+.tabbrowser-tab .tab-background[selected="true"] {
+  margin-left: -1px !important;
+  margin-right: -1px !important;
+  border-radius: 16px !important;
+}*/
+
+.tabbrowser-tab {
+	max-height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background: #2da44e !important;
+  border-radius: 16px !important;
+}
+
+.tab-stack {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+
+/*==================搜索栏==================================*/
+
+
+#urlbar-background,#urlbar{ 
+    border-radius: 16px !important ;
+    background-color: var(--color-bg) !important;
+    
+    border: transparent !important;
+  }
+  #urlbar{
+    background-image: linear-gradient(90deg, #2da44e,#2da44e);
+    
+  /*background-size: auto 10px;
+    background-repeat: no-repeat;
+    background-position: bottom; */
+}
+#urlbar-background{ 
+  margin-bottom: 2px !important;
+  margin-top: 2px !important;
+  margin-left: 2px !important;
+  margin-right: 2px !important; 
+}
+  
+#navigator-toolbox{
+	border-bottom: none !important;
+  }
+  
+  #searchbar
+  {
+	border-radius: 16px !important;
+  background-color: var(--color-bg) !important;
+  }
+
+  .findbar-container
+{
+	overflow: visible !important;
+  background-color: var(--color-bg) !important;
+}
+
+.findbar-textbox
+{
+  border-radius: 16px !important;
+  background-color: var(--color-bg) !important;
+}
+
+
+/*==================书签栏==================================*/
+
+#PlacesToolbar {
+	align-items: center !important;
+	display: flex !important;
+	/*font-family: "Sarasa Mono T SC", sans-serif !important;
+	font-size: 10pt !important;
+	font-weight: 700 !important;*/
+	justify-content: center !important;
+}
+
+/*书签栏自动隐藏*/
+#PersonalToolbar{
+	--uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
+	--uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
+	--uc-autohide-toolbar-delay: 10ms; /* 隐藏时间The toolbar is hidden after 0.6s */
+	
+	/* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
+	--uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
+	--uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
+  }
+  
+  :root[uidensity="compact"] #PersonalToolbar{ --uc-bm-padding: 1px }
+  :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
+  
+  #PersonalToolbar:not([customizing]){
+	position: relative;
+	margin-bottom: calc(0px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
+	transform: rotateX(90deg);
+	transform-origin: top;
+	transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
+	z-index: 1;
+  }
+  
+  #PlacesToolbarItems > .bookmark-item{ padding-block: var(--uc-bm-padding) !important; }
+  
+  #nav-bar:focus-within + #PersonalToolbar{
+	transition-delay: 100ms !important;
+	transform: rotateX(var(--uc-autohide-toolbar-focus-rotation,0));
+  }
+  
+  #navigator-toolbox:hover > #PersonalToolbar{
+	transition-delay: 100ms !important;
+	transform: rotateX(var(--uc-autohide-toolbar-hover-rotation,0));
+  }
+  
+  #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
+	transform: rotateX(0);
+  }
+
+
+
+/*======================== 侧边栏自动隐藏============== */
+
+:root {
+	--sidebar-hover-width: 10px;
+	--sidebar-visible-width: 250px;
+  }
+  
+  #sidebar-box {
+	position: relative !important;
+	overflow-x: hidden !important;
+	margin-right: calc(var(--sidebar-hover-width) * -1) !important;
+	left: var(--sidebar-hover-width) !important;
+	min-width: var(--sidebar-hover-width) !important;
+	max-width: var(--sidebar-hover-width) !important;
+	border-right: 1px solid var(--sidebar-border-color);
+	z-index: 1;
+  }
+  
+  #sidebar-box:hover {
+	margin-right: calc(var(--sidebar-visible-width) * -1) !important;
+	left: var(--sidebar-visible-width) !important;
+	min-width: var(--sidebar-visible-width) !important;
+	max-width: var(--sidebar-visible-width) !important;
+  }
+  
+  #sidebar {
+	opacity: 0 !important;
+  }
+  
+  #sidebar-box:hover #sidebar {
+	opacity: 1 !important;
+  }
+  
+  /* #sidebar-header is hidden by default, change "none" to "inherit" to restore it. */
+  #sidebar-header {
+	display: inherit !important;
+  }
+  
+  /* #sidebar-splitter styles the divider between the sidebar and the rest of the browser. */
+  #sidebar-splitter {
+	display: none;
+  }
+
+/*==================按钮==================================*/
+
+ .toolbarbutton-1:hover {
+	fill:var(--color-button) !important;
+  }
+  
+  .toolbarbutton-1[open="true"] {
+	fill: var(--color-button)
+  }
+  
+  /*按钮无阴影*/  
+  .toolbarbutton-1 .toolbarbutton-icon,
+  .toolbarbutton-1 .toolbarbutton-badge-stack {
+	  background: none !important;
+  }
+ /* Tab hover customizations 标签关闭按钮*/
+.close-icon:hover {
+	border-radius: 60% !important;
+	fill: #FF0000 !important;
+	transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
+/*==================菜单栏边框=================================*/
+menupopup {
+
+	/*padding: px !important;
+	background-color: #2da44e !important;*/
+
+}

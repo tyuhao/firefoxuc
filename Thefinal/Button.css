@@ -1,0 +1,92 @@
+/*toolbar buttons工具栏按钮颜色
+.toolbarbutton-1 {
+	fill: #9f1aff !important;
+	transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }*/
+
+
+  
+  .toolbarbutton-1:hover {
+	fill: #00DDFF !important;
+  }
+  
+  .toolbarbutton-1[open="true"] {
+	fill: #00DDFF !important;
+  }
+ /* 
+  .toolbarbutton-1[disabled] {
+	fill: #652299 !important;
+  }*/
+  /* 按钮无阴影*/
+  .toolbarbutton-1 .toolbarbutton-icon,
+  .toolbarbutton-1 .toolbarbutton-badge-stack {
+	  background: none !important;
+  }
+  
+  
+  /* Tab hover customizations 标签关闭按钮*/
+.close-icon:hover {
+	border-radius: 60% !important;
+	fill: #FF0000 !important;
+	transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
+/*
+#tabs-newtab-button,
+#new-tab-button {
+  width: calc(36px + 30px) !important;
+  margin-inline-start: -15px !important;
+  margin-top: 0px !important;
+ 
+}*/
+/* newtab plus icon color 新建标签按钮颜色
+#tabs-newtab-button .toolbarbutton-icon {
+  fill: #22EE5B !important;
+}*/
+/* Hide some bloat 
+tab-close-button,
+.tab-line,
+.tabbrowser-tab::before,
+.tabbrowser-tab::after,
+.tabbrowser-tab .tab-icon-image {
+	display: none !important;
+}*/
+
+/*toolbar buttons工具栏按钮颜色
+.toolbarbutton-1 {
+	fill: #9f1aff !important;
+	transition: fill 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }*/
+
+
+  
+  .toolbarbutton-1:hover {
+	fill: #00DDFF !important;
+  }
+  
+  .toolbarbutton-1[open="true"] {
+	fill: #00DDFF !important;
+  }
+ /* 
+  .toolbarbutton-1[disabled] {
+	fill: #652299 !important;
+  }*/
+  /* 按钮无阴影*/
+  .toolbarbutton-1 .toolbarbutton-icon,
+  .toolbarbutton-1 .toolbarbutton-badge-stack {
+	  background: none !important;
+  }
+
+
+
+/*
+.tab-content {
+	background-color: none !important;
+	background-image: none !important;
+	font-family: var(--tab-font) !important;
+}
+
+
+#TabsToolbar {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}*/

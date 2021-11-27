@@ -1,0 +1,10 @@
+
+/*导航栏面板颜色*/
+#navigator-toolbox {
+	--tabs-border-color: var(--color-bg) !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	box-shadow: none !important;
+	max-height: var(--tabs-container-height) !important; 
+	min-height: var(--tabs-container-height	) !important;
+}
